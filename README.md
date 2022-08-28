@@ -18,3 +18,7 @@ https://filtrar-autos-jsmoderno.netlify.app/
 Proyecto 04 - LocalStorage Tweets
 
 https://local-storage-jsmoderno.netlify.app/
+
+Proyecto 05 - Carrito de compras con local storage
+
+https://carrito-local-storage-jsmoderno.netlify.app/

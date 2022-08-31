@@ -23,6 +23,11 @@ Proyecto 05 - Carrito de compras con local storage
 
 https://carrito-local-storage-jsmoderno.netlify.app/
 
-Proyecto 06 - Cotizador de seguros con prototypes
+Proyecto 06 - Cotizador de seguros (con prototypes)
 
 https://cotizador-seguros-prototype-jsmoderno.netlify.app/
+
+Proyecto 07 - Administrador de presupuesto (con clases)
+
+https://administrador-presupuesto-jsmoderno.netlify.app/
+

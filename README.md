@@ -29,5 +29,5 @@ https://cotizador-seguros-prototype-jsmoderno.netlify.app/
 
 Proyecto 07 - Administrador de presupuesto (con clases y local storage)
 
-https://administrador-presupuesto-jsmoderno.netlify.app/
+https://admin-presupuesto-ls-jsmoderno.netlify.app/
 

@@ -27,7 +27,7 @@ Proyecto 06 - Cotizador de seguros (con prototypes)
 
 https://cotizador-seguros-prototype-jsmoderno.netlify.app/
 
-Proyecto 07 - Administrador de presupuesto (con clases)
+Proyecto 07 - Administrador de presupuesto (con clases y local storage)
 
 https://administrador-presupuesto-jsmoderno.netlify.app/
 

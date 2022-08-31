@@ -39,3 +39,8 @@ h2 {
     font-size: 22px;
     margin-bottom:30px;
 }
+
+.nuevoPresupuesto {
+    display: block;
+    margin: 1rem auto;
+}

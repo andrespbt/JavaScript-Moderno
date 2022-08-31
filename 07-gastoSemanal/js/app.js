@@ -2,15 +2,23 @@
 const contenidoPrincipal = document.querySelector('.contenido-principal');
 const formulario = document.querySelector('#agregar-gasto');
 const gastosListado = document.querySelector('#gastos ul');
+const reiniciarPresupuestobtn = document.querySelector('#btnPresupuesto');
+reiniciarPresupuestobtn.onclick = () => {
+   const respuesta = confirm('¿ Seguro que desea eliminar el presupuesto y crear uno nuevo ?');
+   if (respuesta) {
+      localStorage.clear();
+      location.reload();
+   }
+};
 let presupuestoPrompt;
 
 // Clases
 
 class Presupuesto {
-   constructor(presupuesto) {
+   constructor(presupuesto, restante, gastos) {
       this.presupuesto = presupuesto;
-      this.restante = presupuesto;
-      this.gastos = [];
+      this.restante = restante ? restante : presupuesto;
+      this.gastos = gastos || [];
    }
 
    nuevoGasto(gasto) {
@@ -34,6 +42,8 @@ class Presupuesto {
       ui.actualizarRestante(this.restante);
       // Comprueba el presupuesto en el html
       ui.comprobarPresupuesto(presupuestoPrompt);
+      // Eliminar de local Storage
+      localStorage.setItem('gastos', JSON.stringify(this.gastos));
    }
 }
 
@@ -89,6 +99,12 @@ class UI {
          sectionPresupuesto.classList.add('hidden');
          sectionPrincipal.classList.remove('hidden');
          h1.textContent = 'Añade tus gastos aqui';
+         // Agregamos el presupuesto a local storage
+         localStorage.setItem('presupuesto', JSON.stringify(presupuestoPrompt.presupuesto));
+
+         // Habilitamos el boton para reiniciar el presupuesto
+         reiniciarPresupuestobtn.classList.remove('hidden');
+         reiniciarPresupuestobtn.classList.add('nuevoPresupuesto');
       }
    }
 
@@ -160,6 +176,7 @@ class UI {
 
    actualizarRestante(restante) {
       document.querySelector('#restante').textContent = restante;
+      localStorage.setItem('restante', presupuestoPrompt.restante.toString());
    }
 
    comprobarPresupuesto(presupuestoObj) {
@@ -192,9 +209,34 @@ class UI {
 const ui = new UI();
 
 // Eventos
+
 eventListener();
 function eventListener() {
-   window.addEventListener('load', ui.preguntarPresupuesto);
+   window.addEventListener('load', () => {
+      if (!localStorage.getItem('presupuesto')) {
+         reiniciarPresupuestobtn.classList.add('hidden');
+         reiniciarPresupuestobtn.classList.remove('nuevoPresupuesto');
+         ui.preguntarPresupuesto();
+      } else {
+         presupuestoPrompt = new Presupuesto(JSON.parse(localStorage.getItem('presupuesto')));
+         if (JSON.parse(localStorage.getItem('restante')) != null) {
+            presupuestoPrompt.restante = JSON.parse(localStorage.getItem('restante'));
+         } else {
+            presupuestoPrompt.restante = presupuestoPrompt.presupuesto;
+         }
+         presupuestoPrompt.gastos = JSON.parse(localStorage.getItem('gastos'));
+
+         ui.insertarPresupuesto(presupuestoPrompt);
+         if (presupuestoPrompt.gastos) {
+            ui.imprimirGastos(presupuestoPrompt.gastos);
+         }
+
+         ui.comprobarPresupuesto(presupuestoPrompt);
+
+         reiniciarPresupuestobtn.classList.remove('hidden');
+         reiniciarPresupuestobtn.classList.add('nuevoPresupuesto');
+      }
+   });
    formulario.addEventListener('submit', agregarGasto);
 }
 
@@ -226,6 +268,7 @@ function agregarGasto(e) {
    // Actualizar restante
    ui.actualizarRestante(restante);
    ui.comprobarPresupuesto(presupuestoPrompt);
+   localStorage.setItem('gastos', JSON.stringify(gastos));
    // Reiniciar formulario
    formulario.reset();
 }

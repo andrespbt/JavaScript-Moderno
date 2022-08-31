@@ -55,7 +55,7 @@ class UI {
       const section = document.createElement('section');
       contenidoPrincipal.classList.add('hidden');
       h1.textContent = 'Ingresar presupuesto';
-      section.classList.add('contenido-principal', 'mx-5', 'text-center', 'sectionPresupuesto');
+      section.className = 'contenido-principal mx-5 text-center sectionPresupuesto';
       section.innerHTML = `
     <div class="row" >
                  <div class="col ">
@@ -63,9 +63,9 @@ class UI {
                              <form id="agregarPresupuesto" action="#">
                                  <div class="form-group" style = "display: flex; flex-direction: column; justify-content: center; align-items: center;">
                                      <label for="gasto" style = "font-size: 2rem; margin-bottom:30px;">Presupuesto total:</label>
-                                     <input type="text" style = "width: 400px" class="form-control" id="presupuestoTotal" placeholder="Añadir presupuesto">
+                                     <input type="text" style = 'width: 15rem' class="form-control" id="presupuestoTotal" placeholder="Añadir presupuesto">
                                  </div>
-                                 <button type="submit" id="presupuestoBtn" class="btn btn-primary" style = "width: 400px">Agregar</button>
+                                 <button type="submit" id="presupuestoBtn" class="btn btn-primary btn-block" style = "max-width: 15rem; margin: 0 auto;">Agregar</button>
                              </form>
  
                      </div> <!--.contenido-->

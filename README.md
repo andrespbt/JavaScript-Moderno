@@ -39,9 +39,15 @@ https://cotizador-seguros-prototype-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/06-prototypeSeguro/
 
-Proyecto 07 - Administrador de presupuesto (con clases y local storage)
+Proyecto 07 - Administrador de presupuesto (con local storage)
 
 https://admin-presupuesto-ls-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/07-gastoSemanal/
+
+Proyecto 08 - Administrador de citas
+
+https://administrador-citas-jsmoderno.netlify.app/
+
+
 

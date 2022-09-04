@@ -25,21 +25,51 @@ export class Interfaz {
 
   imprimirCancion(lyrics, artista, cancion) {
     this.limpiarHtml();
-    this.imprimirTitulo(artista, cancion);
-    const parrafoLyrics = document.createElement('p');
-    parrafoLyrics.textContent = lyrics;
-    divResultado.appendChild(parrafoLyrics);
+    this.spinner();
+
+    setTimeout(() => {
+      this.limpiarHtml();
+      this.imprimirTitulo(artista, cancion);
+      const parrafoLyrics = document.createElement('p');
+      parrafoLyrics.textContent = lyrics;
+      divResultado.appendChild(parrafoLyrics);
+    }, 3000);
   }
 
   imprimirError(mensaje) {
     this.limpiarHtml();
-    const divError = document.createElement('div');
-    divError.textContent = mensaje;
-    divError.classList.add('error');
-    divContenido.appendChild(divError);
-
+    this.spinner();
     setTimeout(() => {
-      divError.remove();
+      this.limpiarHtml();
+      const divError = document.createElement('div');
+      divError.textContent = mensaje;
+      divError.classList.add('error');
+      divContenido.appendChild(divError);
+
+      setTimeout(() => {
+        divError.remove();
+      }, 3000);
     }, 3000);
+  }
+
+  spinner() {
+    const spinner = document.createElement('div');
+    spinner.classList.add('sk-circle');
+    spinner.innerHTML = `
+  <div class="sk-circle1 sk-child"></div>
+  <div class="sk-circle2 sk-child"></div>
+  <div class="sk-circle3 sk-child"></div>
+  <div class="sk-circle4 sk-child"></div>
+  <div class="sk-circle5 sk-child"></div>
+  <div class="sk-circle6 sk-child"></div>
+  <div class="sk-circle7 sk-child"></div>
+  <div class="sk-circle8 sk-child"></div>
+  <div class="sk-circle9 sk-child"></div>
+  <div class="sk-circle10 sk-child"></div>
+  <div class="sk-circle11 sk-child"></div>
+  <div class="sk-circle12 sk-child"></div>
+    `;
+
+    divResultado.appendChild(spinner);
   }
 }

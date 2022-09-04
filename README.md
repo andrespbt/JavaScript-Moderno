@@ -57,4 +57,10 @@ https://admin-citas-indexedb-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/09-adminCitasIndexDB/
 
+Proyecto 10 - CRM indexedDB 
+
+https://crm-indexedb-jsmoderno.netlify.app/
+
+https://andrespbt.github.io/JavaScript-Moderno/10-crmIndexedDB/
+
 

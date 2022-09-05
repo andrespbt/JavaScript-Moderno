@@ -1,5 +1,5 @@
 # JavaScript-Moderno
-Repositorio para curso de JavaScript moderno  de Udemy. Subido a 2 servidores, netfily y github pages
+Repositorio para curso de JavaScript moderno  de Udemy. Subido a 2 servidores, netlify y github pages
 
 
 

@@ -63,4 +63,16 @@ https://crm-indexedb-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/10-crmIndexedDB/
 
+Proyecto 11 - App de clima
+
+https://app-clima-jsmoderno.netlify.app/
+
+https://andrespbt.github.io/JavaScript-Moderno/11-climaApp/
+
+Proyecto 12 - Buscador de canciones
+
+https://buscador-canciones-jsmoderno.netlify.app/
+
+https://andrespbt.github.io/JavaScript-Moderno/12-buscadorDeCanciones/
+
 

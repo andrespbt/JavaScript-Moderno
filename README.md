@@ -75,4 +75,10 @@ https://buscador-canciones-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/12-buscadorDeCanciones/
 
+Proyecto 13 - Buscador de imagenes
+
+https://buscador-imagenes-jsmoderno.netlify.app/
+
+https://andrespbt.github.io/JavaScript-Moderno/13-buscadorDeImagenes/
+
 

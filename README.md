@@ -81,4 +81,10 @@ https://buscador-imagenes-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/13-buscadorDeImagenes/
 
+Proyecto 14 - Cotizador de Criptomonedas
+
+https://cotizador-cripto-jsmoderno.netlify.app/
+
+https://andrespbt.github.io/JavaScript-Moderno/14-cotizadorCripto/
+
 

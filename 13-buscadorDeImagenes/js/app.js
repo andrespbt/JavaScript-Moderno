@@ -2,7 +2,7 @@
 const formulario = document.querySelector('#formulario');
 const resultado = document.querySelector('#resultado');
 const paginacionDiv = document.querySelector('#paginacion');
-const registrosPorPagina = 30;
+const registrosPorPagina = 32;
 let totalPaginas;
 let iterador;
 let paginaActual = 1;
@@ -33,17 +33,29 @@ function* crearPaginador(total) {
   }
 }
 
-function buscarImagenes() {
+async function buscarImagenes() {
   const busqueda = document.querySelector('#termino').value;
   const key = '29731120-ce8fae113263bf64ed699e979';
   const url = `https://pixabay.com/api/?key=${key}&q=${busqueda}&per_page=${registrosPorPagina}&page=${paginaActual}`;
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      totalPaginas = calcularPaginas(data.totalHits);
-      mostrarImagenes(data.hits);
-    });
+  // Usando fetch (original)
+
+  // fetch(url)
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     totalPaginas = calcularPaginas(data.totalHits);
+  //     mostrarImagenes(data.hits);
+  //   });
+
+  // Migracion a async await
+  try {
+    const resultado = await fetch(url);
+    const respuesta = await resultado.json();
+    totalPaginas = calcularPaginas(respuesta.totalHits);
+    mostrarImagenes(respuesta.hits);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function calcularPaginas(total) {

@@ -87,4 +87,8 @@ https://cotizador-cripto-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/14-cotizadorCripto/
 
+Proyecto 15 - Calculadora de precio y propina con JS-server
 
+https://calc-propinas-jsmoderno.netlify.app/
+
+https://andrespbt.github.io/JavaScript-Moderno/15-calcPrecioJsonServer/

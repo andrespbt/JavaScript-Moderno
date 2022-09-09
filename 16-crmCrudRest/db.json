@@ -1,0 +1,32 @@
+{
+  "Clientes": [
+    {
+      "nombre": "Alejandra",
+      "email": "alejandra@gmail.com",
+      "telefono": "156879504",
+      "empresa": "Digitala S.A",
+      "id": 2
+    },
+    {
+      "nombre": "Fernando",
+      "email": "andrespbt14@hotmail.com",
+      "telefono": "02616976994",
+      "empresa": "Digital",
+      "id": 3
+    },
+    {
+      "nombre": "Pedro",
+      "email": "pedro@pedro.com",
+      "telefono": "2131",
+      "empresa": "mema",
+      "id": 4
+    },
+    {
+      "nombre": "Santiago",
+      "email": "santi@gmail.com",
+      "telefono": "156432557",
+      "empresa": "Sancor",
+      "id": 5
+    }
+  ]
+}

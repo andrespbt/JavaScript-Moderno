@@ -92,3 +92,9 @@ Proyecto 15 - Calculadora de precio y propina con JS-server
 https://calc-propinas-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/15-calcPrecioJsonServer/
+
+Proyecto 16 - Administrador de clientes (API-REST creada con json-server)
+
+https://crm-crud-rest-jsmoderno.netlify.app/
+
+https://andrespbt.github.io/JavaScript-Moderno/16-crmCrudRest/

@@ -1,0 +1,16 @@
+{
+  "name": "08-administradordecitas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Andres Poblete",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.0",
+    "jest": "^29.0.3",
+    "jest-environment-jsdom": "^29.0.3"
+  }
+}

@@ -1,9 +1,8 @@
 # JavaScript-Moderno
-Repositorio para curso de JavaScript moderno  de Udemy. Subido a 2 servidores, netlify y github pages
 
+Repositorio para curso de JavaScript moderno de Udemy. Subido a 2 servidores, netlify y github pages
 
-
-Proyecto 01 - Carrito de compras basico 
+Proyecto 01 - Carrito de compras basico
 
 https://carrito-basico-jsmoderno.netlify.app/
 
@@ -57,7 +56,7 @@ https://admin-citas-indexedb-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/09-adminCitasIndexDB/
 
-Proyecto 10 - CRM indexedDB 
+Proyecto 10 - CRM indexedDB
 
 https://crm-indexedb-jsmoderno.netlify.app/
 
@@ -98,3 +97,9 @@ Proyecto 16 - Administrador de clientes (API-REST creada con json-server)
 https://crm-crud-rest-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/16-crmCrudRest/
+
+Proyecto 18 - Calcular interes de prestamos (proyecto hecho en React)
+
+https://cotizador-prestamos-react-jsmoderno.netlify.app/
+
+https://andrespbt.github.io/JavaScript-Moderno/18-prestamos(React)/build

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import clienteAxios from '../config/axios'
 import Alerta from '../components/alerta'
 const Registrar = () => {
   const [ nombre, setNombre ] = useState ('')
@@ -31,10 +31,10 @@ const Registrar = () => {
     // Crear usuario en la api
 
     try {
-      const url = "http://localhost:4000/api/veterinarios"
-      await axios.post(url, { nombre, email , password })
+      await clienteAxios.post('/veterinarios', { nombre, email , password })
      setAlerta({ msg: 'Creado correctamente, revisa tu email', error: false})
     } catch (error) {
+      console.log(error);
       setAlerta({ msg: error.response.data.msg, error: true });
     }
 
@@ -66,8 +66,6 @@ const Registrar = () => {
                     placeholder="Tu Nombre"
                     value={nombre} 
                     onChange={ e => setNombre(e.target.value)}
-                    name="" 
-                    id=""
                     className="border w-full p-3 mt-3 bg-gray-50 rounded-xl" />
                 </div>
                 <div className="my-5">
@@ -80,8 +78,6 @@ const Registrar = () => {
                     placeholder="Tu Email" 
                     value={email} 
                     onChange={ e => setEmail(e.target.value)}
-                    name="" 
-                    id=""
                     className="border w-full p-3 mt-3 bg-gray-50 rounded-xl" />
                 </div>
                 <div className="my-5">
@@ -94,8 +90,6 @@ const Registrar = () => {
                     placeholder="Tu Password"
                     value={password} 
                     onChange={ e => setPassword(e.target.value)} 
-                    name="" 
-                    id=""
                     className="border w-full p-3 mt-3 bg-gray-50 rounded-xl" />
                 </div>
 
@@ -109,8 +103,6 @@ const Registrar = () => {
                     placeholder="Repite tu Password" 
                     value={repetirPassword} 
                     onChange={ e => setRepetirPassword(e.target.value)}
-                    name="" 
-                    id=""
                     className="border w-full p-3 mt-3 bg-gray-50 rounded-xl" />
                 </div>
 

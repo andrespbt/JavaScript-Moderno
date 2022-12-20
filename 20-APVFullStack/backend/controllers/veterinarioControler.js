@@ -1,9 +1,11 @@
 import Veterinario from '../models/Veterinario.js';
 import generarJWT from '../helpers/generarJWT.js';
 import generarId from '../helpers/generarId.js';
+import emailRegistro from '../helpers/emailRegistro.js';
+import emialOlvidePassword from '../helpers/emailOlvidePassword.js';
 
 const registrar = async (req, res) => {
-  const { email } = req.body;
+  const { email, nombre } = req.body;
 
   // Prevenir usarios duplicados
   const existeUsuario = await Veterinario.findOne({ email });
@@ -17,6 +19,13 @@ const registrar = async (req, res) => {
     // Guardar nuevo veterinario
     const veterinario = new Veterinario(req.body);
     const veterinarioGuardado = await veterinario.save();
+
+    // Enviar el email
+    emailRegistro({
+      email,
+      nombre,
+      token: veterinarioGuardado.token
+    });
     res.json(veterinarioGuardado);
   } catch (error) {
     console.log(error);
@@ -26,9 +35,7 @@ const registrar = async (req, res) => {
 const perfil = (req, res) => {
   const { veterinario } = req;
 
-  res.json({
-    perfil: veterinario
-  });
+  res.json(veterinario);
 };
 
 const confirmar = async (req, res) => {
@@ -94,6 +101,13 @@ const olvidePassword = async (req, res) => {
   try {
     existeVeterinario.token = generarId();
     await existeVeterinario.save();
+
+    // Enviar email con instrucciones
+    emialOlvidePassword({
+      email,
+      nombre: existeVeterinario.nombre,
+      token: existeVeterinario.token
+    });
     res.json({ msg: 'Hemos enviado un mail con las instrucciones' });
   } catch (error) {
     console.log(error);

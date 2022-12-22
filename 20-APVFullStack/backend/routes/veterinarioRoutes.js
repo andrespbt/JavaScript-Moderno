@@ -6,7 +6,8 @@ import {
   autenticar,
   olvidePassword,
   comprobarToken,
-  nuevoPassword
+  nuevoPassword,
+  actualizarPerfil
 } from '../controllers/veterinarioControler.js';
 import checkAuth from '../middleware/authMiddleware.js';
 
@@ -26,5 +27,6 @@ router.route('/olvide-password/:token').get(comprobarToken).post(nuevoPassword);
 // Area privada
 
 router.get('/perfil', checkAuth, perfil);
+router.put('/perfil/:id', checkAuth, actualizarPerfil);
 
 export default router;

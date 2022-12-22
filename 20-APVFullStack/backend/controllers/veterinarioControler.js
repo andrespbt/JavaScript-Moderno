@@ -154,4 +154,32 @@ const nuevoPassword = async (req, res) => {
   }
 };
 
-export { registrar, perfil, confirmar, autenticar, olvidePassword, comprobarToken, nuevoPassword };
+const actualizarPerfil = async (req, res) => {
+  const veterinario = await Veterinario.findById(req.params.id);
+  if (!veterinario) {
+    const error = new Error('Hubo un error');
+    return res.status(400).json({ message: error.message });
+  }
+
+  const { email } = req.body;
+  if (veterinario.email !== email) {
+    const existeEmail = await Veterinario.findOne({ email });
+    if (existeEmail) {
+      return res.status(400).json({ msg: 'Ese email ya esta en uso' });
+    }
+  }
+
+  try {
+    veterinario.nombre = req.body.nombre;
+    veterinario.email = req.body.email;
+    veterinario.telefono = req.body.telefono;
+    veterinario.web = req.body.web;
+
+    const veterinarioActualizado = await veterinario.save();
+    res.json(veterinarioActualizado);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export { registrar, perfil, confirmar, autenticar, olvidePassword, comprobarToken, nuevoPassword, actualizarPerfil };

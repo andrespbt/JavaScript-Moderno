@@ -182,4 +182,43 @@ const actualizarPerfil = async (req, res) => {
   }
 };
 
-export { registrar, perfil, confirmar, autenticar, olvidePassword, comprobarToken, nuevoPassword, actualizarPerfil };
+const actualizarPassword = async (req, res) => {
+  //Leer datos
+
+  const { id } = req.veterinario;
+  const { passwordAnt, passwordNuevo } = req.body;
+
+  // Comprobar que el veterinario exista
+
+  const veterinario = await Veterinario.findById(id);
+  if (!veterinario) {
+    const error = new Error('Hubo un error');
+    return res.status(400).json({ message: error.message });
+  }
+
+  // Comprobar password
+
+  if (await veterinario.comprobarPassword(passwordAnt)) {
+    // Almacenar nuevo password
+    veterinario.password = passwordNuevo;
+    await veterinario.save();
+    res.json({ msg: 'Password almacenado correctamente' });
+  } else {
+    const error = new Error('Password actual es incorrecto');
+    return res.status(400).json({ msg: error.message });
+  }
+
+  // Almacenar password
+};
+
+export {
+  registrar,
+  perfil,
+  confirmar,
+  autenticar,
+  olvidePassword,
+  comprobarToken,
+  nuevoPassword,
+  actualizarPerfil,
+  actualizarPassword
+};

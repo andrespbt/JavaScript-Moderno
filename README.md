@@ -103,3 +103,7 @@ Proyecto 18 - Calcular interes de prestamos (proyecto hecho en React)
 https://cotizador-prestamos-react-jsmoderno.netlify.app/
 
 https://andrespbt.github.io/JavaScript-Moderno/18-prestamos(React)/build
+
+Proyecto 20 - Administrador de Pacientes APV (Proyecto full stack MondoDB, Express, React, Node y Tailwind CSS)
+
+https://mern-apv-frontend-beta.vercel.app/

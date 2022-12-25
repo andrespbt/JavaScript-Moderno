@@ -107,3 +107,7 @@ https://andrespbt.github.io/JavaScript-Moderno/18-prestamos(React)/build
 Proyecto 20 - Administrador de Pacientes APV (Proyecto full stack MondoDB, Express, React, Node y Tailwind CSS)
 
 https://mern-apv-frontend-beta.vercel.app/
+
+Extra: Cotizador de Prestamos React
+
+https://eclectic-gingersnap-f8f92d.netlify.app/

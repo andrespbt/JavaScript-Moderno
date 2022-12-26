@@ -108,6 +108,10 @@ Proyecto 20 - Administrador de Pacientes APV (Proyecto full stack MondoDB, Expre
 
 https://mern-apv-frontend-beta.vercel.app/
 
-Extra: Cotizador de Prestamos React
+Extra 21: Cotizador de Prestamos React
 
-https://eclectic-gingersnap-f8f92d.netlify.app/
+https://cotizador-prestamos-react-andrespbt.netlify.app/
+
+Extra 22: Cotizador de Prestamos Vue
+
+https://cotizador-prestamos-vue-andrespbt.netlify.app/

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', initializeApp);
 
 // Functions
 function initializeApp() {
+  favBtn.addEventListener('click', renderFavorites);
   if (select) {
     select.addEventListener('change', renderCategories);
     getCategories();
@@ -48,12 +49,15 @@ function listCategories(categories) {
 }
 
 function printMeals(meals, container) {
-  console.log(meals);
   cleanHtml(container);
   const fragment = document.createDocumentFragment();
   const heading = document.createElement('H2');
   heading.classList.add('text-center', 'text-black', 'my-5');
-  heading.textContent = meals.length ? `${meals.length} meals found` : "Didn't found any meal";
+  heading.textContent = meals.length
+    ? meals.length > 1
+      ? `${meals.length} meals found`
+      : `1 meal found`
+    : "Didn't found any meal";
 
   for (let meal of meals) {
     const { idMeal, strMeal, strMealThumb } = meal;
@@ -111,7 +115,9 @@ function renderRecipeModal(infoMeal) {
     }
   });
   ingredientAndMeasureList.appendChild(fragment);
+  modalBody.appendChild(ingredientAndMeasureList);
 
+  // List of meals
   // Create modal footer
   createFooter(idMeal);
 }
@@ -138,7 +144,8 @@ function saveFavorite(idMeal) {
     array.push(idMeal);
     localStorage.setItem('favoriteMeal', JSON.stringify(array));
   } else {
-    localStorage.setItem('favoriteMeal', idMeal);
+    array.push(idMeal);
+    localStorage.setItem('favoriteMeal', JSON.stringify(array));
   }
 
   swal('Success', 'Recipe added to favorites', 'success');
@@ -153,6 +160,9 @@ function deleteFavorite(idMeal) {
     localStorage.setItem('favoriteMeal', JSON.stringify(localStorageFavorites));
     swal('Success', 'Recipe removed from favorites', 'success');
     createFooter(idMeal);
+    if (favBtn.classList.contains('active')) {
+      renderFavorites();
+    }
   } else {
     swal('Error', "Could'nt remove recipe from favorites", 'error');
   }
@@ -187,10 +197,15 @@ function renderFavorites() {
         .then(response => response.json())
         .then(data => {
           array.push(data.meals[0]);
-        });
+          return array;
+        })
+        .then(array => printMeals(array, favoriteMealContainer));
     }
-    console.log(array[0]);
-    printMeals(array, favoriteMealContainer);
   } else {
+    cleanHtml(favoriteMealContainer);
+    const message = document.createElement('H2');
+    message.textContent = 'No favorites meals found. Add your favorite meal to favorites list.';
+    message.className = 'text-center my-5';
+    favoriteMealContainer.appendChild(message);
   }
 }

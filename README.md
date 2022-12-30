@@ -115,3 +115,7 @@ https://cotizador-prestamos-react-andrespbt.netlify.app/
 Extra 22: Cotizador de Prestamos Vue
 
 https://cotizador-prestamos-vue-andrespbt.netlify.app/
+
+Extra 23: Buscador de recetas con localstorage y fetch api
+
+https://recipe-finder-andrespbt.netlify.app/
